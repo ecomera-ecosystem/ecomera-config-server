@@ -19,8 +19,7 @@ spring:
 
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.xml
-    enabled: false # To enable after adding entities and changelog
-
+    enabled: true
 
 jwt:
   secret: ${JWT_SECRET_KEY:ZHVtbXktYm9vdHN0cmFwLXNlY3JldC1rZXktZm9yLXRlc3RpbmctbWluaW11bS0yNTYtYml0cw==}
