@@ -1,4 +1,4 @@
-package com.youssef.ecomera_config_server;
+package com.ecomera.config;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
