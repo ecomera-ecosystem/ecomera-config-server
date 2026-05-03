@@ -21,7 +21,7 @@ spring:
             - id: ecomera-product-service
               uri: lb://ecomera-product-service
               predicates:
-                - Path=/api/v1/products/**
+                - Path=/api/v1/products/**,/api/v1/categories/**
           filters: []
 
     loadbalancer:
