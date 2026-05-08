@@ -5,6 +5,9 @@ spring:
   application:
     name: ecomera-config-server
 
+  main:
+    allow-bean-definition-overriding: true # Vault may have overlapping beans
+
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:native}
 
@@ -15,9 +18,17 @@ spring:
           uri: ${CONFIG_GIT_URI:https://github.com/ecomera-ecosystem/ecomera-config-server}
           default-label: master
           clone-on-start: true
-        # Native profile for local development
         native:
           search-locations: classpath:/config
+    vault:
+      authentication: token
+      uri: http://${VAULT_HOST:localhost}:${VAULT_PORT:8200}
+      token: ${VAULT_TOKEN:}
+      kv:
+        enabled: true
+        backend: secret/ecomera
+        profile-separator: "/"
+        default-context: shared
 
 eureka:
   client:

@@ -1,5 +1,5 @@
 server:
-  port: ${SERVER_PORT:8080}
+  port: ${GATEWAY_SERVER_PORT:8080}
 
 spring:
   application:
@@ -23,6 +23,24 @@ spring:
               predicates:
                 - Path=/api/v1/products/**,/api/v1/categories/**
           filters: []
+
+    vault:
+      authentication: token
+      uri: http://${VAULT_HOST:localhost}:${VAULT_PORT:8200}
+      token: ${VAULT_TOKEN:}
+      kv:
+        enabled: true
+        backend: secret/ecomera
+        profile-separator: "/"
+        default-context: api-gateway
+
+    config:
+      uri: http://${CONFIG_SERVER_HOST:localhost}:${CONFIG_SERVER_PORT:8888}
+      fail-fast: true
+      retry:
+        initial-interval: 1000
+        max-interval: 2000
+        max-attempts: 6
 
     loadbalancer:
       cache:
