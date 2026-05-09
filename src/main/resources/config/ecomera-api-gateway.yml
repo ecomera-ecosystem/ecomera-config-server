@@ -22,7 +22,10 @@ spring:
               uri: lb://ecomera-product-service
               predicates:
                 - Path=/api/v1/products/**,/api/v1/categories/**
-          filters: []
+            - id: ecomera-cart-service
+              uri: lb://ecomera-cart-service
+              predicates:
+                - Path=/api/v1/cart/**
 
     vault:
       authentication: token
@@ -61,6 +64,9 @@ eureka:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${server.port}
     hostname: ${EUREKA_HOSTNAME:localhost}
+
+jwt:
+  signing-key: ${JWT_SIGNING_KEY:SuperSecretJWTKeyThatShouldBeRotatedRegularly1234567890}
 
 management:
   endpoints:
