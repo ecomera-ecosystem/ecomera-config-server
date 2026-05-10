@@ -82,11 +82,6 @@ logging:
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 
-jwt:
-  signing-key: ${JWT_SIGNING_KEY:SuperSecretJWTKeyThatShouldBeRotatedRegularly1234567890}
-  access-token-ttl: ${JWT_ACCESS_TTL:3600000}
-  refresh-token-ttl: ${JWT_REFRESH_TTL:604800000}
-
 cors:
   allowed-origins:
     - http://localhost:4200
