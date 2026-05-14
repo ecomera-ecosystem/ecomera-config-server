@@ -30,6 +30,10 @@ spring:
               uri: lb://ecomera-order-service
               predicates:
                 - Path=/api/v1/orders/**
+            - id: ecomera-payment-service
+              uri: lb://ecomera-payment-service
+              predicates:
+                - Path=/api/v1/payments/**
 
     vault:
       authentication: token
