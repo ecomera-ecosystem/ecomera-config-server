@@ -50,9 +50,9 @@
   color: "0E8A16"
   description: "Continuous Integration & Continuous Delivery"
 
-- name: qodana
-  color: "FF6F00"
-  description: "Qodana code quality analysis"
+- name: sonarqube
+  color: "4E9BCD"
+  description: "SonarCloud code quality analysis"
 
 - name: docker
   color: "0DB7ED"
