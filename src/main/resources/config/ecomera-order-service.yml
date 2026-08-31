@@ -88,23 +88,6 @@ logging:
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 
-cors:
-  allowed-origins:
-    - http://localhost:4200
-    - http://localhost:3000
-    - http://localhost:5173
-  allowed-methods:
-    - GET
-    - POST
-    - PUT
-    - PATCH
-    - DELETE
-    - OPTIONS
-  allowed-headers:
-    - Authorization
-    - Content-Type
-  allow-credentials: true
-
 management:
   endpoint:
     health:
