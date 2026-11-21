@@ -1,4 +1,10 @@
 # Defaults served to every Config Server client from the native search location.
+spring:
+  cloud:
+    openfeign:
+      micrometer:
+        enabled: true
+
 management:
   tracing:
     sampling:
